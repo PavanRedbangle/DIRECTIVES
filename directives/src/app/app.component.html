@@ -1,0 +1,64 @@
+<div>
+  <div class="jumbotron">
+    <h1 class="display-4">Directives</h1>
+  </div>
+ <div class="card">
+   <div class="card-header">Structural Directives</div>
+   <div class="card-body">
+     <h5 class="card-title">NgIf - Structural Directives</h5>
+     <div class="card-text">
+      <!-- <span *ngIf="showStatus">some data display </span> -->
+      <ng-template [ngIf]="showStatus">some data display </ng-template>
+      <hr>
+      <button type="button" class="btn btn-primary" (click)="toggleStatus()">{{showStatus?'Hide':'Display'}}</button>
+     </div>
+     <hr>
+     <h5 class="card-title">Ngfor - Structural Directives</h5>
+     <p class="card-text" *ngFor="let data of arr">
+        {{data}}
+     </p>
+     <hr>
+     <h5 class="card-title">NgSwitchCase - Structural Directives</h5>
+     <p class="card-text">card text</p>
+   </div>
+ </div>
+ <br>
+ <div class="card">
+  <div class="card-header">Attribute Directives</div>
+  <div class="card-body">
+    <h5 class="card-title">NgClass - Attribute Directives</h5>
+    <p class="card-text">
+      it is simply add className to class check online 
+    </p>
+    <hr>
+    <h5 class="card-title">NgStyle - Attribute Directives</h5>
+    <div class="card-text">
+      <!-- this is the way of apply ngstyles to html -->
+        <p [ngStyle]="{'font-style':fontstyle,'font-weight':fontweight,'font-size':fontsize}">Pavan kalyan</p>
+        <input type="checkbox" (change)="fontstyle=fontstyle=='normal'?'bold':'normal'">Bold
+        <input type="checkbox" (change)="fontweight=fontweight=='normal'?'italic':'normal'">Italic
+        <span>Size(px):</span><input type="text" [(ngModel)]="fontsize">
+    </div>
+    <hr>
+    <h5 class="card-title">NgModel - Attribute Directives</h5>
+    <div class="card-text">
+      <p>name is {{name}}</p>
+      <input type="text" [(ngModel)]="name">
+    </div>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="card-header">Custome Directives</div>
+  <div class="card-body">
+    <h5 class="card-title">ButtonHoverDirective - Custome Directives</h5>
+   <div>
+    <!-- among buttons you want space we can use &nbsp -->
+    <button type="button" class="btn btn-primary">Primary</button>&nbsp;
+    <button type="button" class="btn btn-warning">secondary</button>&nbsp;
+    <button type="button" class="btn btn-success">success</button>&nbsp;
+    <button type="button" class="btn btn-danger">danger</button>&nbsp;
+   </div>
+  </div>
+</div>
+</div>
